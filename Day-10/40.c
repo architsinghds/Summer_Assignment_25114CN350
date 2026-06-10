@@ -6,16 +6,22 @@ int main()
     scanf("%d", &rows);
     for (int i = 1; i <= rows; i++) 
     {
-        for (int j = i; j < rows; j++) 
+        for (int space = 1; space <= rows - i; space++) 
         {
             printf(" ");
         }
-        for (int k = 1; k <= (2 * i - 1); k++) 
+        char ch = 'A';
+        for (int j = 1; j <= i; j++)
         {
-            printf("%c", 'A' + (i - 1));
+            printf("%c", ch);
+            ch++;
+        }
+        ch -= 2; 
+        for (int j = 1; j < i; j++) 
+        {
+            printf("%c", ch);
+            ch--;
         }
         printf("\n");
-    }
-
-    return 0;
+    }    return 0;
 }
